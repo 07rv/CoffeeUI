@@ -80,24 +80,24 @@ export default function HomeScreen() {
                 </TouchableOpacity>
               );
             }}
-          ></FlatList>
-        </View>
-
-        <View className="mt-16 py-2">
-          <Carousel
-            containerCustomStyle={{ overflow: "visible" }}
-            data={coffeeItems}
-            renderItem={({ item }) => <CoffeeCard item={item} />}
-            firstItem={1}
-            loop={true}
-            inactiveSlideScale={0.75}
-            inactiveSlideOpacity={0.75}
-            sliderWidth={400}
-            itemWidth={260}
-            slideStyle={{ display: "flex", alignItems: "center" }}
           />
         </View>
       </SafeAreaView>
+
+      <View className="mt-16 py-2">
+        <Carousel
+          containerCustomStyle={{ overflow: "visible" }}
+          data={coffeeItems}
+          renderItem={({ item }) => <CoffeeCard item={item} />}
+          firstItem={1}
+          loop={true}
+          inactiveSlideScale={0.75}
+          inactiveSlideOpacity={0.75}
+          sliderWidth={400}
+          itemWidth={260}
+          slideStyle={{ display: "flex", alignItems: "center" }}
+        />
+      </View>
     </View>
   );
 }
