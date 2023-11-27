@@ -14,7 +14,7 @@ import {
   MagnifyingGlassIcon,
   MapPinIcon,
 } from "react-native-heroicons/solid";
-
+import Carousel from "react-native-snap-carousel";
 import { categories, coffeeItems } from "../constants/index";
 import { useState } from "react";
 
@@ -84,7 +84,18 @@ export default function HomeScreen() {
         </View>
 
         <View className="mt-16 py-2">
-          <CoffeeCard />
+          <Carousel
+            containerCustomStyle={{ overflow: "visible" }}
+            data={coffeeItems}
+            renderItem={({ item }) => <CoffeeCard item={item} />}
+            firstItem={1}
+            loop={true}
+            inactiveSlideScale={0.75}
+            inactiveSlideOpacity={0.75}
+            sliderWidth={400}
+            itemWidth={260}
+            slideStyle={{ display: "flex", alignItems: "center" }}
+          />
         </View>
       </SafeAreaView>
     </View>
