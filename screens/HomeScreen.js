@@ -14,7 +14,6 @@ import {
   MagnifyingGlassIcon,
   MapPinIcon,
 } from "react-native-heroicons/solid";
-import Carousel from "react-native-snap-carousel";
 
 import { categories, coffeeItems } from "../constants/index";
 import { useState } from "react";
@@ -73,7 +72,7 @@ export default function HomeScreen() {
                   style={{
                     backgroundColor: isActive ? "#EDA800" : "rgba(0,0,0,0.07)",
                   }}
-                  className="p-4 px-5 rounded-full mr-2 shadow"
+                  className="p-4 px-5 rounded-full mr-2 shadow-black"
                 >
                   <Text className={"font-semibold" + activeTextClass}>
                     {item.title}
@@ -84,19 +83,8 @@ export default function HomeScreen() {
           ></FlatList>
         </View>
 
-        <View className="mt-16 py-2 ">
-          <Carousel
-            containerCustomStyle={{ overflow: "visible" }}
-            data={coffeeItems}
-            renderItem={({ item }) => <CoffeeCard item={item} />}
-            firstItem={1}
-            loop={true}
-            inactiveSlideOpacity={0.75}
-            inactiveSlideScale={0.75}
-            sliderWidth={400}
-            itemWidth={260}
-            slideStyle={{ display: "flex", alignItems: "center" }}
-          />
+        <View className="mt-16 py-2">
+          <CoffeeCard />
         </View>
       </SafeAreaView>
     </View>
