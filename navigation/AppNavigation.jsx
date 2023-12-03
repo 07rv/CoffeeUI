@@ -3,7 +3,15 @@ import { NavigationContainer } from "@react-navigation/native";
 const Tab = createBottomTabNavigator();
 
 import Register from "../components/Register/Register";
-import { View, Image, Text, TouchableOpacity } from "react-native";
+import Posts from "../components/Post/Posts";
+import { View, Text } from "react-native";
+import {
+  HomeIcon,
+  ArchiveBoxIcon,
+  UserCircleIcon,
+  ChatBubbleLeftRightIcon,
+} from "react-native-heroicons/solid";
+
 export default function AppNavigation() {
   return (
     <NavigationContainer>
@@ -31,7 +39,7 @@ export default function AppNavigation() {
       >
         <Tab.Screen
           name="Home"
-          component={Register}
+          component={Posts}
           options={{
             tabBarIcon: ({ focused }) => (
               <View
@@ -41,15 +49,7 @@ export default function AppNavigation() {
                   top: 10,
                 }}
               >
-                <Image
-                  source={require("../assets/images/coffee1.png")}
-                  resizeMode="contain"
-                  style={{
-                    width: 25,
-                    height: 25,
-                    // tintColor: focused ? "#e32f45" : "#748c94",
-                  }}
-                />
+                <HomeIcon size={25} color={focused ? "#e32f45" : "#748c94"} />
                 <Text
                   style={{
                     fontSize: 12,
@@ -63,7 +63,7 @@ export default function AppNavigation() {
           }}
         />
         <Tab.Screen
-          name="Home1"
+          name="Archive"
           component={Register}
           options={{
             tabBarIcon: ({ focused }) => (
@@ -74,46 +74,25 @@ export default function AppNavigation() {
                   top: 10,
                 }}
               >
-                <Image
-                  source={require("../assets/images/coffee2.png")}
-                  resizeMode="contain"
-                  style={{
-                    width: 25,
-                    height: 25,
-                    // tintColor: focused ? "#e32f45" : "#748c94",
-                  }}
+                <ArchiveBoxIcon
+                  size={25}
+                  color={focused ? "#e32f45" : "#748c94"}
                 />
+
                 <Text
                   style={{
                     fontSize: 12,
                     color: focused ? "#e32f45" : "#748c94",
                   }}
                 >
-                  HOME1
+                  Archive
                 </Text>
               </View>
             ),
           }}
         />
         <Tab.Screen
-          name="Home2"
-          component={Register}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <Image
-                source={require("../assets/images/coffee4.png")}
-                resizeMode="contain"
-                style={{
-                  width: 50,
-                  height: 50,
-                  top: -30,
-                }}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Home3"
+          name="Contact"
           component={Register}
           options={{
             tabBarIcon: ({ focused }) => (
@@ -124,14 +103,9 @@ export default function AppNavigation() {
                   top: 10,
                 }}
               >
-                <Image
-                  source={require("../assets/images/coffee4.png")}
-                  resizeMode="contain"
-                  style={{
-                    width: 25,
-                    height: 25,
-                    // tintColor: focused ? "#e32f45" : "#748c94",
-                  }}
+                <ChatBubbleLeftRightIcon
+                  size={25}
+                  color={focused ? "#e32f45" : "#748c94"}
                 />
                 <Text
                   style={{
@@ -139,14 +113,14 @@ export default function AppNavigation() {
                     color: focused ? "#e32f45" : "#748c94",
                   }}
                 >
-                  HOME3
+                  Contact
                 </Text>
               </View>
             ),
           }}
         />
         <Tab.Screen
-          name="Home4"
+          name="Login"
           component={Register}
           options={{
             tabBarIcon: ({ focused }) => (
@@ -157,14 +131,9 @@ export default function AppNavigation() {
                   top: 10,
                 }}
               >
-                <Image
-                  source={require("../assets/images/coffee5.png")}
-                  resizeMode="contain"
-                  style={{
-                    width: 25,
-                    height: 25,
-                    // tintColor: focused ? "#e32f45" : "#748c94",
-                  }}
+                <UserCircleIcon
+                  size={25}
+                  color={focused ? "#e32f45" : "#748c94"}
                 />
                 <Text
                   style={{
@@ -172,7 +141,7 @@ export default function AppNavigation() {
                     color: focused ? "#e32f45" : "#748c94",
                   }}
                 >
-                  HOME4
+                  Login
                 </Text>
               </View>
             ),
