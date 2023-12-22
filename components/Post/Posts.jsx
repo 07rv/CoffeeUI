@@ -5,13 +5,14 @@ export default function Posts() {
   return (
     <SafeAreaView>
       <StatusBar />
-      <ScrollView>
-        {new Array(6).fill().map((item, index) => (
+      <ScrollView className="h-[32rem]">
+        {new Array(3).fill().map((item, index) => (
           <View key={index}>
             <PostList />
           </View>
         ))}
       </ScrollView>
+      <Text>wedfghj</Text>
     </SafeAreaView>
   );
 }
